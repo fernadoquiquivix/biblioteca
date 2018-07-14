@@ -7,7 +7,7 @@ Public Class Conexion
     Protected Function conectado()
 
         Try
-            cnn = New SqlConnection("Data Source=STECINFOS;Initial Catalog=biblioteca;Integrated Security=True")
+            cnn = New SqlConnection("Data Source=STECINFOS;Initial Catalog=biblioteca;Integrated Security=True") 'servidor base de datos sqlserver 2014
             'cnn = New SqlConnection("Data Source = 192.168.1.20,1433; Initial Catalog = biblioteca; user Id=pucho; password=1234;")
             cnn.Open()
             Return True
