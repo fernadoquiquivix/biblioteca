@@ -1,0 +1,782 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{338056EC-58E2-4224-ACD5-56F8FCD8F143}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SisBiblioteca.My.MyApplication</StartupObject>
+    <RootNamespace>SisBiblioteca</RootNamespace>
+    <AssemblyName>SisBiblioteca</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SisBiblioteca.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SisBiblioteca.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge.Controls">
+      <HintPath>..\..\..\..\Downloads\driver camara\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>..\..\..\..\Downloads\driver camara\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>..\..\..\..\Downloads\driver camara\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="WebCAM">
+      <HintPath>..\..\..\..\Downloads\WebCAM.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Datos\Conexion.vb" />
+    <Compile Include="Datos\Fautor.vb" />
+    <Compile Include="Datos\fcategoria.vb" />
+    <Compile Include="Datos\fcliente.vb" />
+    <Compile Include="Datos\fdetalle_donacion.vb" />
+    <Compile Include="Datos\fdonacion.vb" />
+    <Compile Include="Datos\feditorial.vb" />
+    <Compile Include="Datos\festado.vb" />
+    <Compile Include="Datos\flibro.vb" />
+    <Compile Include="Datos\fprestamo.vb" />
+    <Compile Include="Datos\fubicacion.vb" />
+    <Compile Include="Datos\fusuario.vb" />
+    <Compile Include="Logica\vcategoria.vb" />
+    <Compile Include="Logica\vcliente.vb" />
+    <Compile Include="Logica\vdetalle_donacion.vb" />
+    <Compile Include="Logica\vdonacion.vb" />
+    <Compile Include="Logica\veditorial.vb" />
+    <Compile Include="Logica\vestado.vb" />
+    <Compile Include="Logica\vlibro.vb" />
+    <Compile Include="Logica\vprestamo.vb" />
+    <Compile Include="Logica\vubicacion.vb" />
+    <Compile Include="Logica\vusuario.vb" />
+    <Compile Include="Presentacion\CargaSys.Designer.vb">
+      <DependentUpon>CargaSys.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\CargaSys.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmAutor.Designer.vb">
+      <DependentUpon>FrmAutor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmAutor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmayuda.Designer.vb">
+      <DependentUpon>frmayuda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmayuda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmBuscarAutor.Designer.vb">
+      <DependentUpon>frmBuscarAutor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmBuscarAutor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmBuscarCategoria.Designer.vb">
+      <DependentUpon>frmBuscarCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmBuscarCategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmBuscarDonador.Designer.vb">
+      <DependentUpon>frmBuscarDonador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmBuscarDonador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmBuscarEditorial.Designer.vb">
+      <DependentUpon>FrmBuscarEditorial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmBuscarEditorial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmBuscarEstadoLibro.Designer.vb">
+      <DependentUpon>frmBuscarEstadoLibro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmBuscarEstadoLibro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmBuscarLibro.Designer.vb">
+      <DependentUpon>frmBuscarLibro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmBuscarLibro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmBuscarUbicacion.Designer.vb">
+      <DependentUpon>frmBuscarUbicacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmBuscarUbicacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmCargalibros.Designer.vb">
+      <DependentUpon>frmCargalibros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmCargalibros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmCategoria.Designer.vb">
+      <DependentUpon>FrmCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmCategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmcliente.Designer.vb">
+      <DependentUpon>frmcliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmcliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmDetalle_Donacion.Designer.vb">
+      <DependentUpon>frmDetalle_Donacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmDetalle_Donacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmDonacion.Designer.vb">
+      <DependentUpon>frmDonacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmDonacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmEditorial.Designer.vb">
+      <DependentUpon>FrmEditorial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmEditorial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmEstado.Designer.vb">
+      <DependentUpon>FrmEstado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmEstado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmLibros.Designer.vb">
+      <DependentUpon>frmLibros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmLibros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmMenuCliente.Designer.vb">
+      <DependentUpon>frmMenuCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmMenuCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmMenuDonador.Designer.vb">
+      <DependentUpon>FrmMenuDonador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmMenuDonador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmMenuRegistros.Designer.vb">
+      <DependentUpon>frmMenuRegistros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmMenuRegistros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmMenuReportes.Designer.vb">
+      <DependentUpon>frmMenuReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmMenuReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmMenuUsuario.Designer.vb">
+      <DependentUpon>frmMenuUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmMenuUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmPrestamo.Designer.vb">
+      <DependentUpon>frmPrestamo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmPrestamo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmReporteDonadores.Designer.vb">
+      <DependentUpon>frmReporteDonadores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmReporteDonadores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmUbicacion.Designer.vb">
+      <DependentUpon>FrmUbicacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmUbicacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmInicio.Designer.vb">
+      <DependentUpon>frmInicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmInicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmWebCam.Designer.vb">
+      <DependentUpon>FrmWebCam.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmWebCam.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\login.Designer.vb">
+      <DependentUpon>login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logica\Vautor.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Presentacion\Menu.Designer.vb">
+      <DependentUpon>Menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Menu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ReporteClientes.Designer.vb">
+      <DependentUpon>ReporteClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ReporteClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario.Designer.vb">
+      <DependentUpon>Usuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmConsultaGeneroClient.Designer.vb">
+      <DependentUpon>FrmConsultaGeneroClient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmConsultaGeneroClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmConsultalibros.Designer.vb">
+      <DependentUpon>frmConsultalibros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmConsultalibros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmConsultDonador.Designer.vb">
+      <DependentUpon>frmConsultDonador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmConsultDonador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmrptlibrostotaldonados.Designer.vb">
+      <DependentUpon>frmrptlibrostotaldonados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmrptlibrostotaldonados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptconsultaclientesgenero.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptconsultaclientesgenero.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptconsultaDonadorLibro.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptconsultaDonadorLibro.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptlibros.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptlibros.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptlibrostotaldonados.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptlibrostotaldonados.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Presentacion\CargaSys.resx">
+      <DependentUpon>CargaSys.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmAutor.resx">
+      <DependentUpon>FrmAutor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmayuda.resx">
+      <DependentUpon>frmayuda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmBuscarAutor.resx">
+      <DependentUpon>frmBuscarAutor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmBuscarCategoria.resx">
+      <DependentUpon>frmBuscarCategoria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmBuscarDonador.resx">
+      <DependentUpon>frmBuscarDonador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmBuscarEditorial.resx">
+      <DependentUpon>FrmBuscarEditorial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmBuscarEstadoLibro.resx">
+      <DependentUpon>frmBuscarEstadoLibro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmBuscarLibro.resx">
+      <DependentUpon>frmBuscarLibro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmBuscarUbicacion.resx">
+      <DependentUpon>frmBuscarUbicacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmCargalibros.resx">
+      <DependentUpon>frmCargalibros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmCategoria.resx">
+      <DependentUpon>FrmCategoria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmcliente.resx">
+      <DependentUpon>frmcliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmDetalle_Donacion.resx">
+      <DependentUpon>frmDetalle_Donacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmDonacion.resx">
+      <DependentUpon>frmDonacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmEditorial.resx">
+      <DependentUpon>FrmEditorial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmEstado.resx">
+      <DependentUpon>FrmEstado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmLibros.resx">
+      <DependentUpon>frmLibros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmMenuCliente.resx">
+      <DependentUpon>frmMenuCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmMenuDonador.resx">
+      <DependentUpon>FrmMenuDonador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmMenuRegistros.resx">
+      <DependentUpon>frmMenuRegistros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmMenuReportes.resx">
+      <DependentUpon>frmMenuReportes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmMenuUsuario.resx">
+      <DependentUpon>frmMenuUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmPrestamo.resx">
+      <DependentUpon>frmPrestamo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmReporteDonadores.resx">
+      <DependentUpon>frmReporteDonadores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmUbicacion.resx">
+      <DependentUpon>FrmUbicacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmInicio.resx">
+      <DependentUpon>frmInicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmWebCam.resx">
+      <DependentUpon>FrmWebCam.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\login.es-GT.resx">
+      <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\login.quc-Latn.resx">
+      <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\login.resx">
+      <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Menu.resx">
+      <DependentUpon>Menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ReporteClientes.resx">
+      <DependentUpon>ReporteClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario.resx">
+      <DependentUpon>Usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmConsultaGeneroClient.resx">
+      <DependentUpon>FrmConsultaGeneroClient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmConsultalibros.resx">
+      <DependentUpon>frmConsultalibros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmConsultDonador.resx">
+      <DependentUpon>frmConsultDonador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmrptlibrostotaldonados.resx">
+      <DependentUpon>frmrptlibrostotaldonados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptconsultaclientesgenero.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptconsultaclientesgenero.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptconsultaDonadorLibro.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptconsultaDonadorLibro.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptlibros.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptlibros.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptlibrostotaldonados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptlibrostotaldonados.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\accept-file-or-checklist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diskette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garbage-bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graduation-hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system_folder_20287.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer-service_icon-icons.com_52843.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows_Stand_By_22529.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_blue_glow_35134.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unity_tweak_tool_22478.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icontexto-user-web20-orkut_icon-icons.com_55361.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banking-donation-2_icon-icons.com_48702.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notepad_22522.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\placeholderblackshapeforlocalizationonmaps_79861.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightbrown_library_folder_12274.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books_21468.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glasses-books_icon-icons.com_49292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\line_chart_21436.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_Group_27014.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer-service_icon-icons.com_528431.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Books_icon-icons.com_76879.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter_1131.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue_applications_folders_12408.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder-Printer_22393.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1455555011_users-10_icon-icons.com_53271.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows_Magnifier_26985.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo profequiquivix 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circulo.png" />
+    <None Include="Resources\bloquear.png" />
+    <None Include="Resources\cepac logo.jpg" />
+    <None Include="Resources\logo mejorado cepac.jpg" />
+    <None Include="Resources\logo mejorado cepac1.jpg" />
+    <None Include="Resources\logo mejorado cepac png.png" />
+    <None Include="Resources\logo biblioteca.jpg" />
+    <None Include="Resources\logo fonfo biblioteca.jpg" />
+    <None Include="Resources\checked.png" />
+    <None Include="Resources\accept-circular-button-outline.png" />
+    <None Include="Resources\round-delete-button.png" />
+    <None Include="Resources\letras biblioteca.jpg" />
+    <None Include="Resources\login.png" />
+    <None Include="Resources\Icono cerrar FN.png" />
+    <None Include="Resources\Icono Maximizar.png" />
+    <None Include="Resources\Icono Minimizar.png" />
+    <None Include="Resources\Icono Restaurar.png" />
+    <None Include="Resources\Mobile-Menu-Icon.png" />
+    <None Include="Resources\lectura.jpg" />
+    <None Include="Resources\leer.png" />
+    <None Include="Resources\bookshelf_icon-icons.com_54414.png" />
+    <None Include="Resources\producto.png" />
+    <None Include="Resources\libro-abierto.png" />
+    <None Include="Resources\libro-abierto1.png" />
+    <None Include="Resources\libro-abierto2.png" />
+    <None Include="Resources\libros-en-pila-de-tres.png" />
+    <None Include="Resources\biblioteca1.jpg" />
+    <None Include="Resources\Domingo alejandro.jpg" />
+    <None Include="Resources\search_book_open_search_locate_6178.png" />
+    <None Include="Resources\Add_27013.png" />
+    <None Include="Resources\clientes.png" />
+    <None Include="Resources\estante-para-libros.png" />
+    <None Include="Resources\libros.jpg" />
+    <None Include="Resources\stop_close_off_14465.png" />
+    <None Include="Resources\donadores.jpg" />
+    <None Include="Resources\autor.jpg" />
+    <None Include="Resources\categoria.jpg" />
+    <None Include="Resources\ubicar.png" />
+    <None Include="Resources\estado.jpg" />
+    <None Include="Resources\dar-una-tarjeta-de-presentacion.png" />
+    <None Include="Resources\trabajador-de-delivery-que-da-una-caja-a-un-receptor.png" />
+    <None Include="Resources\grupo.png" />
+    <None Include="Resources\equipo.png" />
+    <None Include="Resources\diagrama.png" />
+    <None Include="Resources\cliente.png" />
+    <None Include="Resources\estante-para-libros %281%29.png" />
+    <None Include="Resources\totallibros.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\consultar libros.png" />
+    <None Include="Resources\camara-de-fotos.png" />
+    <None Include="Resources\mapa-de-ubicacion.png" />
+    <None Include="Resources\intercambio.png" />
+    <None Include="Resources\addusergroup_1251.png" />
+    <None Include="Resources\impresora.png" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows_Stand_By_225291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_Group_270141.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo azul.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book-2943383_1280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\biblioteca.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cabinet_21466.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books_214681.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box_21467.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_19742.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_Group-80_icon-icons.com_57247.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cargar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\limpiar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_197421.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books_214682.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo verde.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barra 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barra.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\canceltheapplication_cancelar_2901.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\savetheapplication_guardar_2958.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-validated_40458.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new-file_40454.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_stop_exit_1583.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
