@@ -117,9 +117,10 @@ Partial Class frmayuda
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Location = New System.Drawing.Point(200, 280)
         Me.Name = "frmayuda"
-        Me.Opacity = 0.9R
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Opacity = 0.95R
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Nosotros:"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnsalir, System.ComponentModel.ISupportInitialize).EndInit()

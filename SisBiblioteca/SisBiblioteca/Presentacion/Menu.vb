@@ -92,7 +92,7 @@ Public Class Menu
     End Sub
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-        frmayuda.Show()
+        frmayuda.ShowDialog()
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
